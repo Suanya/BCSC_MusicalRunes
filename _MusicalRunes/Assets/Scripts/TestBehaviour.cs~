@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TestBehaviour : MonoBehaviour
+{
+    public float mSpeed;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(0.0f, 0.0f, mSpeed * Time.deltaTime);
+        }
+        else if(Input.GetKey(KeyCode.s))
+        {
+            transform.Translate(0.0f, 0.0f, -mSpeed * Time.deltaTime);
+        }
+           
+    }
+}
