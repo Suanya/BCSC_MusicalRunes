@@ -19,6 +19,6 @@ public class TestEvents : MonoBehaviour
     public void TestCall(int i)
     {
         Debug.Log($"Eli is #{i}!");
+        
     }
-
 }
