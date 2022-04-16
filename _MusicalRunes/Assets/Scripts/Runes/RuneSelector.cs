@@ -10,22 +10,30 @@ using UnityEngine;
 public class RuneSelector : MonoBehaviour
 {
     [SerializeField] private AudioSource m_as;
+    [SerializeField] private AudioSource m_as2;
 
     private int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
     private int m_currentIndex = 0;
 
+    private bool CompletedSuccesfully;
+
+
     public void OnRuneActivated(int index)
     {
-        if (m_currentIndex >= m_currentRuneSequence.Length) return;
+        if(!CompletedSuccesfully)
+        {
+            if (m_currentIndex >= m_currentRuneSequence.Length) return;
 
-        if (m_currentRuneSequence[m_currentIndex] == index)
-        {
-            CorrectSelected();
+            if (m_currentRuneSequence[m_currentIndex] == index)
+            {
+                CorrectSelected();
+            }
+            else
+            {
+                Failed();
+            }
         }
-        else
-        {
-            Failed();
-        }
+        
     }
 
     private void Failed()
@@ -36,14 +44,24 @@ public class RuneSelector : MonoBehaviour
     private void CorrectSelected()
     {
         m_currentIndex++;
-        m_as.Play();
-        //Logic
-        SequenceCompleted();
+
+        if(m_currentIndex <= 3)
+        {
+            m_as.Play();
+        }
+
+        if(m_currentIndex == 4)
+        {
+            SequenceCompleted();
+            Debug.Log("complete");
+        }
+        
     }
 
     private void SequenceCompleted()
     {
-       
+        m_as2.Play();
+        CompletedSuccesfully = true;
     }
 }
 
