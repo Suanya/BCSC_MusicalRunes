@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Rune : MonoBehaviour
+{
+    [SerializeField] private Color m_activationColor;
+    [SerializeField] private AudioSource m_audioSource;
+    [SerializeField] private Image m_runeImage;
+    [SerializeField] private float m_colorTransitionDuration = 0.3f;
+    [SerializeField] private float m_minActivationDuration = 0.5f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

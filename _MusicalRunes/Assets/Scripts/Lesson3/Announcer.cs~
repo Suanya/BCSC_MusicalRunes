@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Announcer : MonoBehaviour
+{
+    // bounce amplitude
+    // bounce scale
+
+    [SerializeField]
+    [Range(-1,1)] private float m_bounceAmplitude = 0.01f;
+    [SerializeField] private float m_bounceFrequency = 0.01f;
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

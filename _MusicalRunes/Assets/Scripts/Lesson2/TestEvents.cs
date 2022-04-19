@@ -12,7 +12,7 @@ public class TestEvents : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            m_click.Invoke();
+            //m_click.Invoke();
         }
     }
 
