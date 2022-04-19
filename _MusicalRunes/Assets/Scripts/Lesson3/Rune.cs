@@ -7,7 +7,7 @@ public class Rune : MonoBehaviour
 {
     [SerializeField] private Color m_activationColor;
     [SerializeField] private AudioSource m_audioSourceCorrect;
-    [SerializeField] private AudioSource m_audioSourceFail;
+    
     [SerializeField] private Image m_runeImage;
     [SerializeField] private float m_colorTransitionDuration = 0.3f;
 
@@ -50,39 +50,5 @@ public class Rune : MonoBehaviour
             yield return null;
         }   
     }
-
-    // FailSequence
-    
-    public void FailCountDown()
-    {
-        ToggleButtonInteractability(false);
-        StartCoroutine(ReEnableGame());
-
-    }
-
-    IEnumerator ReEnableGame()
-    {
-        yield return StartCoroutine(AnnouncerCoroutine(3, 1));
-        m_announcerText.text = "Again!";
-        ToggleButtonInteractability(true);
-    }
-
-    IEnumerator AnnouncerCoroutine(int count, int delay)
-    {
-        for (int i = count; i >= 0; i--)
-        {
-            m_announcerText.text = i.ToString();
-            yield return new WaitForSeconds(delay);
-        }
-    }
-
-    private void ToggleButtonInteractability(bool isActive)
-    {
-        foreach (var runeBtn in m_runesButtons)
-        {
-            runeBtn.GetComponent<Button>().interactable = isActive;
-        }
-    }
-
 
 }

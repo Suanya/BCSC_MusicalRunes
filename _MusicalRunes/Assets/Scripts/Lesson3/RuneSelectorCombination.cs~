@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class RuneSelectorContinued : MonoBehaviour
+public class RuneSelectorCombination : MonoBehaviour
 {
     [SerializeField] private AudioSource m_as;
-    [SerializeField] private AudioSource m_audioSourceFail;
-    [SerializeField] private AudioSource m_asComplete;
-    
+    [SerializeField] private AudioSource m_as2;
 
     private int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
     private int m_currentIndex = 0;
@@ -33,8 +30,16 @@ public class RuneSelectorContinued : MonoBehaviour
         }
 
     }
- 
-    // correct Sequence
+
+    private void Failed()
+    {
+        m_currentIndex = 0; // restart the whole sequence
+
+        // change announcer text to Failed
+        // count down 3 2 1 go
+        // prevent buttons of being interactable during that timer
+    }
+
     private void CorrectSelected()
     {
         m_currentIndex++;
@@ -54,15 +59,7 @@ public class RuneSelectorContinued : MonoBehaviour
 
     private void SequenceCompleted()
     {
-        m_asComplete.Play();
+        m_as2.Play();
         CompletedSuccesfully = true;
-    }
-
-    // fail Sequence
-    private void Failed()
-    {
-        m_audioSourceFail.Play();
-        //FailCountDown();
-        m_currentIndex = 0; // restart the whole sequence
     }
 }
