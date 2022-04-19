@@ -7,7 +7,8 @@ using TMPro;
 public class RuneSelectorCombination : MonoBehaviour
 {
     [Header("Audio")]
-    [SerializeField] private AudioSource m_as;
+    [SerializeField] private AudioSource m_audioSourceCorrect;
+    [SerializeField] private AudioSource m_audioSourceFail;
     [SerializeField] private AudioSource m_as2;
 
     [Header("SetActive")]
@@ -15,6 +16,14 @@ public class RuneSelectorCombination : MonoBehaviour
 
     [Header("Announcements")]
     [SerializeField] private TMP_Text m_announcerText;
+
+    /*
+    [Header("Visuals")]
+    [SerializeField] private Color m_colorCorrect;
+    [SerializeField] private float m_colorTransitionDuration = 0.3f;
+    [SerializeField] private Image m_runeImage;
+    */
+    
 
     private int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
     private int m_currentIndex = 0;
@@ -32,9 +41,11 @@ public class RuneSelectorCombination : MonoBehaviour
             {
                 CorrectSelected();
                 Debug.Log("Correct");
+                //StartCoroutine(ColorCorrect());
             }
             else
             {
+                m_audioSourceFail.Play();
                 Failed();
                 Debug.Log("OhNo! Fail");
                 FailCountDown();
@@ -51,7 +62,8 @@ public class RuneSelectorCombination : MonoBehaviour
 
         if (m_currentIndex <= 3)
         {
-            m_as.Play();
+            m_audioSourceCorrect.Play();
+            // StartCoroutine(ColorCorrect());
         }
 
         if (m_currentIndex == 4)
@@ -61,6 +73,35 @@ public class RuneSelectorCombination : MonoBehaviour
         }
 
     }
+
+    /*
+    // color correct
+    private IEnumerator ColorCorrect()
+    {
+        yield return LerpToColor(Color.white, m_colorCorrect);
+
+        yield return new WaitForEndOfFrame();
+
+        yield return LerpToColor(m_colorCorrect, Color.white);
+    }
+
+    private IEnumerator LerpToColor(Color start, Color end)
+    {
+        float elapsedTime = 0;
+        float startTime = Time.time;
+
+        while(elapsedTime < m_colorTransitionDuration)
+        {
+            m_runeImage.color = Color.Lerp(start, end, elapsedTime / m_colorTransitionDuration);
+            elapsedTime = Time.time - startTime;
+
+            yield return null;
+
+        }
+    }
+    */
+
+
 
     private void SequenceCompleted()
     {

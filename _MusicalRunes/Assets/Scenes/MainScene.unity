@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 243605482}
   - component: {fileID: 243605481}
   - component: {fileID: 243605479}
+  - component: {fileID: 243605480}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -322,6 +323,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &243605480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243605477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activationColor: {r: 0, g: 1, b: 0.052369595, a: 1}
+  m_runeImage: {fileID: 243605482}
+  m_colorTransitionDuration: 0.3
 --- !u!114 &243605481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +386,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: RuneSelectorCombination, Assembly-CSharp
         m_MethodName: OnRuneActivated
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 243605480}
+        m_TargetAssemblyTypeName: Rune, Assembly-CSharp
+        m_MethodName: RuneClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1048,14 +1076,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5632096d77a04f46842065dcfbe7e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_as: {fileID: 571079237}
+  m_audioSourceCorrect: {fileID: 571079237}
+  m_audioSourceFail: {fileID: 571079235}
   m_as2: {fileID: 571079233}
   m_runesButtons:
   - {fileID: 1616430655}
   - {fileID: 243605477}
   - {fileID: 595668898}
   - {fileID: 710189112}
-  m_announcerText: {fileID: 0}
+  m_announcerText: {fileID: 515149238}
 --- !u!82 &571079235
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1181,7 +1210,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c1fd85f5153ca864faea08e2c168aaea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 698424e0c64ffd4429be4472edcd8a4c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1491,6 +1520,7 @@ GameObject:
   - component: {fileID: 595668903}
   - component: {fileID: 595668902}
   - component: {fileID: 595668900}
+  - component: {fileID: 595668901}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1613,6 +1643,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &595668901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595668898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activationColor: {r: 0.09743297, g: 1, b: 0, a: 1}
+  m_runeImage: {fileID: 595668903}
+  m_colorTransitionDuration: 0.3
 --- !u!114 &595668902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1669,6 +1714,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 595668901}
+        m_TargetAssemblyTypeName: Rune, Assembly-CSharp
+        m_MethodName: RuneClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &595668903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,6 +1777,7 @@ GameObject:
   - component: {fileID: 710189117}
   - component: {fileID: 710189116}
   - component: {fileID: 710189114}
+  - component: {fileID: 710189115}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -1842,6 +1900,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &710189115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710189112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activationColor: {r: 0.066278934, g: 1, b: 0, a: 1}
+  m_runeImage: {fileID: 710189117}
+  m_colorTransitionDuration: 0.3
 --- !u!114 &710189116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,6 +1967,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 710189115}
+        m_TargetAssemblyTypeName: Rune, Assembly-CSharp
+        m_MethodName: RuneClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2502,12 +2587,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activationColor: {r: 1, g: 0.19713613, b: 0, a: 1}
-  m_audioSourceCorrect: {fileID: 0}
-  m_runeImage: {fileID: 1010837245}
+  m_activationColor: {r: 0, g: 0, b: 0, a: 0}
+  m_runeImage: {fileID: 0}
   m_colorTransitionDuration: 0.3
-  m_runesButtons: []
-  m_announcerText: {fileID: 0}
 --- !u!82 &1010837248
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3015,12 +3097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activationColor: {r: 1, g: 0.08614111, b: 0, a: 1}
-  m_audioSourceCorrect: {fileID: 0}
-  m_runeImage: {fileID: 1161968123}
+  m_activationColor: {r: 0, g: 0, b: 0, a: 0}
+  m_runeImage: {fileID: 0}
   m_colorTransitionDuration: 0.3
-  m_runesButtons: []
-  m_announcerText: {fileID: 0}
 --- !u!82 &1161968126
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3342,12 +3421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activationColor: {r: 1, g: 0.18122566, b: 0, a: 1}
-  m_audioSourceCorrect: {fileID: 0}
-  m_runeImage: {fileID: 1393682057}
+  m_activationColor: {r: 0, g: 0, b: 0, a: 0}
+  m_runeImage: {fileID: 0}
   m_colorTransitionDuration: 0.3
-  m_runesButtons: []
-  m_announcerText: {fileID: 0}
 --- !u!82 &1393682060
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3457,6 +3533,7 @@ GameObject:
   - component: {fileID: 1616430660}
   - component: {fileID: 1616430659}
   - component: {fileID: 1616430657}
+  - component: {fileID: 1616430658}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3493,7 +3570,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c1fd85f5153ca864faea08e2c168aaea, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 698424e0c64ffd4429be4472edcd8a4c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3579,6 +3656,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1616430658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616430655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_activationColor: {r: 0.01530087, g: 1, b: 0, a: 1}
+  m_runeImage: {fileID: 1616430660}
+  m_colorTransitionDuration: 0.3
 --- !u!114 &1616430659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3631,6 +3723,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1616430658}
+        m_TargetAssemblyTypeName: Rune, Assembly-CSharp
+        m_MethodName: RuneClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4174,12 +4278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6d45b7da5a947fb89685c82b0d780e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_activationColor: {r: 1, g: 0.05751387, b: 0, a: 1}
-  m_audioSourceCorrect: {fileID: 0}
-  m_runeImage: {fileID: 1933134217}
+  m_activationColor: {r: 0, g: 0, b: 0, a: 0}
+  m_runeImage: {fileID: 0}
   m_colorTransitionDuration: 0.3
-  m_runesButtons: []
-  m_announcerText: {fileID: 0}
 --- !u!82 &1933134220
 AudioSource:
   m_ObjectHideFlags: 0
