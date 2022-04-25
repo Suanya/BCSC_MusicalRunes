@@ -48,6 +48,7 @@ public class RuneSelectorCombination : MonoBehaviour
                 m_audioSourceFail.Play();
                 Failed();
                 Debug.Log("OhNo! Fail");
+                
                 FailCountDown();
                 Debug.Log("Countdown");
 
@@ -70,6 +71,7 @@ public class RuneSelectorCombination : MonoBehaviour
         {
             SequenceCompleted();
             Debug.Log("complete");
+            m_announcerText.text = "Yeah!!!";
         }
 
     }
@@ -127,7 +129,7 @@ public class RuneSelectorCombination : MonoBehaviour
     IEnumerator ReEnableGame()
     {
         yield return StartCoroutine(AnnoucerCoroutine(3, 1));
-        m_announcerText.text = "Again";
+        m_announcerText.text = "Again!";
         ToggleButtonInteractive(true);
     }
 
