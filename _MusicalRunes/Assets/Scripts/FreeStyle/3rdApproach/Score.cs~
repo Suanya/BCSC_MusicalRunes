@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Score : MonoBehaviour
+{
+    public string playerName;
+    public string playerScore;
+
+    public Score(string name, float score)
+    {
+        this.playerName = playerName;
+        this.playerScore = score;
+    }
+}

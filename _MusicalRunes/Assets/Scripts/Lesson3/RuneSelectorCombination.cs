@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class RuneSelectorCombination : MonoBehaviour
 {
@@ -23,12 +24,13 @@ public class RuneSelectorCombination : MonoBehaviour
     [SerializeField] private float m_colorTransitionDuration = 0.3f;
     [SerializeField] private Image m_runeImage;
     */
-    
 
     private int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
     private int m_currentIndex = 0;
-
     private bool CompletedSuccesfully;
+
+    
+    
 
     // Indexing the selected Runes
     public void OnRuneActivated(int index)
@@ -42,6 +44,8 @@ public class RuneSelectorCombination : MonoBehaviour
                 CorrectSelected();
                 Debug.Log("Correct");
                 //StartCoroutine(ColorCorrect());
+                ScoreManager.instance.AddPoint();
+
             }
             else
             {
@@ -51,6 +55,8 @@ public class RuneSelectorCombination : MonoBehaviour
                 
                 FailCountDown();
                 Debug.Log("Countdown");
+
+                ScoreManager.instance.ResetPoints();
 
             }
         }
@@ -109,6 +115,8 @@ public class RuneSelectorCombination : MonoBehaviour
     {
         m_as2.Play();
         CompletedSuccesfully = true;
+
+        
     }
 
     // failed Sequence
