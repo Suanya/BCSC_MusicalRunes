@@ -13,6 +13,7 @@ public class SecondScoreManager : MonoBehaviour
         sd = new ScoreData();
     }
 
+    /*
     public IEnumerator<Score> GetHighScores()
     {
         return sd.score.OrderByDescending(keySelector: x :score => x.score);
@@ -22,4 +23,5 @@ public class SecondScoreManager : MonoBehaviour
     {
         sd.score.Add(score);
     }
+    */
 }

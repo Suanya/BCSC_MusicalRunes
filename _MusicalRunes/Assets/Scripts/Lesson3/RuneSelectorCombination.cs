@@ -18,6 +18,8 @@ public class RuneSelectorCombination : MonoBehaviour
     [Header("Announcements")]
     [SerializeField] private TMP_Text m_announcerText;
 
+    [SerializeField] private GameManager m_GMScript;
+
     /*
     [Header("Visuals")]
     [SerializeField] private Color m_colorCorrect;
@@ -44,7 +46,7 @@ public class RuneSelectorCombination : MonoBehaviour
                 CorrectSelected();
                 Debug.Log("Correct");
                 //StartCoroutine(ColorCorrect());
-                ScoreManager.instance.AddPoint();
+                //ScoreManager.instance.AddPoint();
 
             }
             else
@@ -56,7 +58,7 @@ public class RuneSelectorCombination : MonoBehaviour
                 FailCountDown();
                 Debug.Log("Countdown");
 
-                ScoreManager.instance.ResetPoints();
+                //ScoreManager.instance.ResetPoints();
 
             }
         }
@@ -70,15 +72,20 @@ public class RuneSelectorCombination : MonoBehaviour
         if (m_currentIndex <= 3)
         {
             m_audioSourceCorrect.Play();
+            m_GMScript.AddScore(10);
             // StartCoroutine(ColorCorrect());
         }
+        
 
         if (m_currentIndex == 4)
         {
             SequenceCompleted();
             Debug.Log("complete");
             m_announcerText.text = "Yeah!!!";
+            m_GMScript.AddScore(100);
         }
+
+        
 
     }
 

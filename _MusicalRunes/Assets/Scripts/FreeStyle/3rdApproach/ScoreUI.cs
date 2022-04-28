@@ -10,7 +10,8 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] public SecondScoreManager secondScoreManager;
 
     private void Start()
-    {
+    { 
+        /*
         secondScoreManager.AddScore(new Score(playerName: "Lizzy", playerScore: 6));
         secondScoreManager.AddScore(new Score(playerName: "Jonny", playerScore: 8));
 
@@ -24,5 +25,6 @@ public class ScoreUI : MonoBehaviour
             row.playerScore.text = playerScore[i].playerScore.ToString;
                 
         }
+        */
     }
 }

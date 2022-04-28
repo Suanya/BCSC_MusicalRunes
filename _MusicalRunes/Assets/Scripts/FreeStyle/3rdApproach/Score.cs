@@ -9,9 +9,11 @@ public class Score : MonoBehaviour
     public string playerName;
     public string playerScore;
 
+    /*
     public Score(string playerName, float score)
     {
         this.playerName = playerName;
         this.playerScore = score;
     }
+    */
 }
