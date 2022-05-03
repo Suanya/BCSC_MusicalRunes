@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// Enums and nameSpaces
+/// </summary>
+
+
+namespace MusicalRunes
+{
+    public enum PowerUpType // store this as it is a list of variables
+    {
+        Hint, replay
+    }
+
+    public class PowerUpManager : MonoBehaviour
+    {
+       
+
+
+        [SerializeField] PowerUpType pType;
+        
+    }
+}

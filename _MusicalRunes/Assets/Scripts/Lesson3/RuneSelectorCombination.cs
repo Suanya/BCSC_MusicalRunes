@@ -27,8 +27,9 @@ public class RuneSelectorCombination : MonoBehaviour
     [SerializeField] private Image m_runeImage;
     */
 
-    private int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
-    private int m_currentIndex = 0;
+    public int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
+    public int m_currentIndex = 0;
+
     private bool CompletedSuccesfully;
 
     

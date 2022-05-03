@@ -16,7 +16,7 @@ public class RuneSelector : MonoBehaviour
     private int m_currentIndex = 0;
 
     private bool CompletedSuccesfully;
-
+    internal int[] m_currentRuneSquence;
 
     public void OnRuneActivated(int index)
     {

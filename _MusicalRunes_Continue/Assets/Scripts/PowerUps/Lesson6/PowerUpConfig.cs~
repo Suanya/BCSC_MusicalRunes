@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using MusicalRunes; // PowerUpType now available
+
+public class PowerUpConfig : ScriptableObject // streamlines your project
+{
+    public PowerUpType m_powerUpType;
+    public string powerUpNames;
+    [TextArea] public string m_description;
+}
