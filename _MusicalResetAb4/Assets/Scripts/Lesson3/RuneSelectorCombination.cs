@@ -7,8 +7,10 @@ using System;
 
 public class RuneSelectorCombination : MonoBehaviour
 {
+    /*
     [Header("GameManager")]
     [SerializeField] private GameManager m_GMScript;
+    */
      
     [Header("Audio")]
     [SerializeField] private AudioSource m_audioSourceCorrect;
@@ -70,10 +72,14 @@ public class RuneSelectorCombination : MonoBehaviour
     {
         m_currentIndex++;
 
+        //m_GMScript.AddScore(10);
+        GameManager.s_instance.AddScore(20);
+
         if (m_currentIndex <= 3)
         {
             m_audioSourceCorrect.Play();
             // StartCoroutine(ColorCorrect());
+            
         }
 
         if (m_currentIndex == 4)
@@ -83,8 +89,7 @@ public class RuneSelectorCombination : MonoBehaviour
             m_announcerText.text = "Yeah!!!";
         }
 
-        m_GMScript.AddScore(10);
-        //GameManager.s_instance.AddScore(10);
+      
 
     }
 
@@ -123,6 +128,7 @@ public class RuneSelectorCombination : MonoBehaviour
         CompletedSuccesfully = true;
 
         
+
     }
 
     // failed Sequence

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,18 +30,43 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey(m_scoreKey))
+        if(s_instance == null)
         {
-            m_highScore = PlayerPrefs.GetInt(m_scoreKey); // value to get
+            s_instance = this;
+        }
+        else
+        {
+            Debug.LogError("tooManySingleton");
+        }
+       
+
+
+        if (File.Exists(Application.dataPath + "/SaveData.json"))
+        {
+            string json = File.ReadAllText(Application.dataPath + "/SaveData.json");
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            m_highScore = int.Parse(data.highScore);
             m_highScoreText.text = m_highScore.ToString();
+
+
         }
     }
 
+    // saving
     private void OnApplicationQuit()
     {
-        if (m_currentScore > m_highScore)
+        if(m_currentScore >= m_highScore)
         {
-            PlayerPrefs.SetInt(m_scoreKey, m_currentScore);
+            SaveData data = new SaveData();
+            data.highScore = m_currentScore.ToString();
+            string json = JsonUtility.ToJson(data);
+            File.WriteAllText(Application.dataPath + "/SaveData.json", json);
+            PlayerPrefs.SetString("HighScore", "True"); PlayerPrefs.SetInt(m_scoreKey, m_currentScore);
         }
+        
+        
     }
 }
+
+

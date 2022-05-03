@@ -1044,7 +1044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5632096d77a04f46842065dcfbe7e5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GMScript: {fileID: 571079239}
   m_audioSourceCorrect: {fileID: 571079237}
   m_audioSourceFail: {fileID: 571079235}
   m_as2: {fileID: 571079233}

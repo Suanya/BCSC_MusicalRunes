@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LoadSaveData : MonoBehaviour
+{
+    [SerializeField] private SaveData m_save1;
+    [SerializeField] private SaveData m_save2;
+    [SerializeField] private SaveData m_save3;
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
