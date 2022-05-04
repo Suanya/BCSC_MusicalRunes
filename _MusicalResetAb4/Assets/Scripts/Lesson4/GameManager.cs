@@ -39,8 +39,6 @@ public class GameManager : MonoBehaviour
             Debug.LogError("tooManySingleton");
         }
        
-
-
         if (File.Exists(Application.dataPath + "/SaveData.json"))
         {
             string json = File.ReadAllText(Application.dataPath + "/SaveData.json");
