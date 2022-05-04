@@ -183,6 +183,7 @@ MonoBehaviour:
   - {fileID: 595668903}
   - {fileID: 710189117}
   m_RSCScript: {fileID: 571079234}
+  m_minIndex: 0
 --- !u!114 &127607105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,6 +1211,7 @@ MonoBehaviour:
   m_announcerText: {fileID: 515149238}
   m_currentRuneSequence: 00000000010000000200000003000000
   m_currentIndex: 0
+  m_completedSuccesfully: 0
 --- !u!82 &571079235
 AudioSource:
   m_ObjectHideFlags: 0

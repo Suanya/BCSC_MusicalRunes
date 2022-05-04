@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ReplayPowerUp : PowerUp
 {
-    [[SerializeField] private Image[] m_btnImgs;
-    [SerializeField] private RuneSelector m_RSCScript;
+    [SerializeField] private Image[] m_btnImgs;
+    [SerializeField] private RuneSelectorCombination m_RSCScript;
     [SerializeField] private int m_minIndex = 0;
 
 
