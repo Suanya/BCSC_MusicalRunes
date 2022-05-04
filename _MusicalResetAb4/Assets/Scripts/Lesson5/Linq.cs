@@ -24,7 +24,7 @@ public class Linq : MonoBehaviour
 
         float totalFloats = m_floats.Sum();
 
-        //float sumOffFLoatsGreaterThan5 = m_floats.Where(t => t > 5).Sum();
+        float sumOffFLoatsGreaterThan5 = m_floats.Where(t => t > 5).Sum();
 
         //var myList = m_floats.Where(t => t > 5);
     }
@@ -54,8 +54,8 @@ public class Linq : MonoBehaviour
             }
         }
 
-        m_floats.Where(t => t > 5);
-
+      
+        
 
     }
 }
@@ -86,3 +86,16 @@ public enum HeroType
      return total;
  }
  */
+
+/*
+        List<float> new1List = m_floats.Where(t => t > 5);
+        // is equivalent to:
+        List<float> newList;
+        foreach(float t in m_floats)
+        {
+            if(t > 5)
+            {
+                newList.Add(t);
+            }
+        }
+        */

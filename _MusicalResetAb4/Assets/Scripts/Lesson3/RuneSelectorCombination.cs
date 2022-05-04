@@ -30,9 +30,9 @@ public class RuneSelectorCombination : MonoBehaviour
     [SerializeField] private Image m_runeImage;
     */
 
-    private int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
-    private int m_currentIndex = 0;
-    private bool CompletedSuccesfully;
+    public int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
+    public int m_currentIndex = 0;
+    public bool m_completedSuccesfully;
 
     
     
@@ -40,7 +40,7 @@ public class RuneSelectorCombination : MonoBehaviour
     // Indexing the selected Runes
     public void OnRuneActivated(int index)
     {
-        if (!CompletedSuccesfully)
+        if (!m_completedSuccesfully)
         {
             if (m_currentIndex >= m_currentRuneSequence.Length) return;
 
@@ -68,7 +68,7 @@ public class RuneSelectorCombination : MonoBehaviour
     }
 
     // correct selected Sequence
-    private void CorrectSelected()
+    public void CorrectSelected()
     {
         m_currentIndex++;
 
@@ -125,14 +125,14 @@ public class RuneSelectorCombination : MonoBehaviour
     private void SequenceCompleted()
     {
         m_as2.Play();
-        CompletedSuccesfully = true;
+        m_completedSuccesfully = true;
 
         
 
     }
 
     // failed Sequence
-    private void Failed()
+    public void Failed()
     {
         m_currentIndex = 0; // restart the whole sequence
         Debug.Log("IndexBack");
