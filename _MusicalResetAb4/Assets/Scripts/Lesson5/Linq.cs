@@ -11,7 +11,7 @@ public class Linq : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(m_available);
+        //Debug.Log(m_available);
 
     }
 
@@ -36,7 +36,7 @@ public class Linq : MonoBehaviour
         bool checkName = m_heroes.Any(t => t.heroName == "Jean");
         bool checkNameAndHealth = m_heroes.Any(t => t.heroName == "Elli" && t.heroHealth > 0);
 
-        double avgDamage = m_heroes.Average(t => t.heroDamage);
+        //double avgDamage = m_heroes.Average(t => t.heroDamage);
 
         var allWizards = m_heroes.Where(t => t.Class == HeroType.Wizard);
 

@@ -1,0 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using MusicalRunes;
+
+public class PowerUpConfig : ScriptableObject
+{
+    public PowerUpType m_powerUpType;
+}
