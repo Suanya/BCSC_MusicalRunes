@@ -8,6 +8,7 @@ namespace MusicalRunes
     public enum PowerUpType
     {
         hint, replay
+        hint, replay 
     }    
 }
 
