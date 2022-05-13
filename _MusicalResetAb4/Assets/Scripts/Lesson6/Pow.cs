@@ -11,6 +11,7 @@ public class Pow : MonoBehaviour
     {
         Debug.Log(m_powerUp.m_powerUpName);
         Debug.Log(m_powerUp.m_description);
+         
         if(m_powerUp.m_powerUpType == PowerUpType.hint)
         {
             Debug.Log("true");

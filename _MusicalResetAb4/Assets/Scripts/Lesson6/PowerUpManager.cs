@@ -7,9 +7,10 @@ namespace MusicalRunes
 {
     public enum PowerUpType
     {
-        hint, replay
-        hint, replay 
-    }    
+        hint, replay      
+    }
+
+    
 }
 
 
@@ -19,13 +20,14 @@ namespace MusicalRunes
 
 /*
  * public class PowerUpManager : MonoBehaviour
-    {     
+    {
         [SerializeField] PowerUpType pType;
 
-        
+
     }
-        private void Start()
-        {
-            if(pType == PowerUpType.hint)
-        }
+    private void Start()
+    {
+        if (pType == PowerUpType.hint)
+    }
+ * 
 */

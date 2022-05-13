@@ -9,8 +9,6 @@ public class ShowHintPowerUp : PowerUp
     [SerializeField] private Image[] m_btnImgs;
     [SerializeField] private RuneSelectorCombination m_RSCScript;
 
-   
-
     public override void OnPowerUpClick()
     {
         base.OnPowerUpClick();

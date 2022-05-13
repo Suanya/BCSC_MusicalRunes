@@ -12,16 +12,9 @@ namespace MusicalRunes
         public PowerUpConfig m_powerUpConfig;
 
 
-
         public void Start()
         {
             Setup(m_powerUpConfig);
-            //Localization.Jason = 3;
-
-            /*
-            Debug.Log(Localization.Jason);
-            Debug.Log(Localization.Sum(2, 3));
-            */
         }
 
         public void Setup(PowerUpConfig powerUpConfig)
