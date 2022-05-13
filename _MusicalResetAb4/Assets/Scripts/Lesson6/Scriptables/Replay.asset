@@ -15,5 +15,5 @@ MonoBehaviour:
   m_powerUpType: 1
   m_icon: {fileID: 21300000, guid: 9f41df97cd6ff2a409a97bc7f9d58737, type: 3}
   m_Upgradable: 1
-  m_powerUpNameID: ReplayName
-  m_descriptionID: ReplayID
+  m_powerUpNameID: PurgeName
+  m_descriptionID: Purge
