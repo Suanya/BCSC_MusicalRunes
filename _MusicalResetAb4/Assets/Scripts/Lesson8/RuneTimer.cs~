@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class RuneTimer : MonoBehaviour
+{
+    public float runeChoosingTime;
+    public float remainingRuneChooseTime;
+
+    bool isRuneChoosingTime;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!isRuneChoosingTime) return;
+
+        remainingRuneChooseTime -= Time.deltaTime;
+        remainingRuneChooseTime = Mathf.Max(0, remainingRuneChooseTime);
+        //timeText.text = remainingRuneChooseTime.ToString("F1");
+
+        if (remainingRuneChooseTime <= 0)
+            StartCoroutine(FailedSequence(false));
+
+       
+        
+
+        
+
+             
+    }
+}
