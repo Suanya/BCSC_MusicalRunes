@@ -15,7 +15,7 @@ public class RuneSelectorCombination : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource m_audioSourceCorrect;
     [SerializeField] private AudioSource m_audioSourceFail;
-    [SerializeField] private AudioSource m_as2;
+    [SerializeField] private AudioSource m_as2;    
 
     [Header("SetActive")]
     [SerializeField] GameObject[] m_runesButtons;
@@ -23,19 +23,13 @@ public class RuneSelectorCombination : MonoBehaviour
     [Header("Announcements")]
     [SerializeField] private TMP_Text m_announcerText;
 
-    /*
-    [Header("Visuals")]
-    [SerializeField] private Color m_colorCorrect;
-    [SerializeField] private float m_colorTransitionDuration = 0.3f;
-    [SerializeField] private Image m_runeImage;
-    */
+    // [SerializeField] private Color m_failColor;
+
+    
 
     public int[] m_currentRuneSequence = new[] { 0, 1, 2, 3 };
     public int m_currentIndex = 0;
     public bool m_completedSuccesfully;
-
-    
-    
 
     // Indexing the selected Runes
     public void OnRuneActivated(int index)
@@ -48,13 +42,12 @@ public class RuneSelectorCombination : MonoBehaviour
             {
                 CorrectSelected();
                 Debug.Log("Correct");
-                //StartCoroutine(ColorCorrect());
+                
                 //ScoreManager.instance.AddPoint();
-
             }
             else
             {
-                m_audioSourceFail.Play();
+                m_audioSourceFail.Play();               
                 Failed();
                 Debug.Log("OhNo! Fail");
                 
@@ -62,7 +55,6 @@ public class RuneSelectorCombination : MonoBehaviour
                 Debug.Log("Countdown");
 
                 //ScoreManager.instance.ResetPoints();
-
             }
         }
     }
@@ -78,8 +70,7 @@ public class RuneSelectorCombination : MonoBehaviour
         if (m_currentIndex <= 3)
         {
             m_audioSourceCorrect.Play();
-            // StartCoroutine(ColorCorrect());
-            
+           
         }
 
         if (m_currentIndex == 4)
@@ -88,48 +79,17 @@ public class RuneSelectorCombination : MonoBehaviour
             Debug.Log("complete");
             m_announcerText.text = "Yeah!!!";
         }
-
-      
-
     }
-
-    /*
-    // color correct
-    private IEnumerator ColorCorrect()
-    {
-        yield return LerpToColor(Color.white, m_colorCorrect);
-
-        yield return new WaitForEndOfFrame();
-
-        yield return LerpToColor(m_colorCorrect, Color.white);
-    }
-
-    private IEnumerator LerpToColor(Color start, Color end)
-    {
-        float elapsedTime = 0;
-        float startTime = Time.time;
-
-        while(elapsedTime < m_colorTransitionDuration)
-        {
-            m_runeImage.color = Color.Lerp(start, end, elapsedTime / m_colorTransitionDuration);
-            elapsedTime = Time.time - startTime;
-
-            yield return null;
-
-        }
-    }
-    */
-
-
 
     private void SequenceCompleted()
     {
         m_as2.Play();
         m_completedSuccesfully = true;
-
-        
-
     }
+
+    
+    
+    
 
     // failed Sequence
     public void Failed()
@@ -137,15 +97,13 @@ public class RuneSelectorCombination : MonoBehaviour
         m_currentIndex = 0; // restart the whole sequence
         Debug.Log("IndexBack");
     }
-
-    
+   
     public void FailCountDown()
     {
         ToggleButtonInteractive(false);
         StartCoroutine(ReEnableGame());
     }
     
-
     IEnumerator ReEnableGame()
     {
         yield return StartCoroutine(AnnoucerCoroutine(3, 1));
@@ -169,5 +127,4 @@ public class RuneSelectorCombination : MonoBehaviour
             runeBtn.GetComponent<Button>().interactable = isActive;
         }
     }
-
 }
